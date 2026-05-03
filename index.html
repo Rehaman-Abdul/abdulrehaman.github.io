@@ -4,82 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdul Rehaman | Portfolio</title>
-    <!-- Bootstrap CSS for layout and styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        .hero-section {
-            padding: 100px 0;
-            background-color: #f8f9fa;
+        :root { --yellow: #FFD600; --dark: #121212; }
+        body { font-family: 'Inter', sans-serif; background-color: #fff; color: var(--dark); }
+        
+        /* Hero Section */
+        .hero { position: relative; padding: 100px 0; overflow: hidden; }
+        .yellow-circle { 
+            position: absolute; width: 500px; height: 500px; 
+            background: var(--yellow); border-radius: 50%; 
+            right: -100px; top: 50px; z-index: -1; 
         }
-        .project-card {
-            transition: transform 0.3s;
-            margin-bottom: 30px;
+        .hero h1 { font-size: 5rem; font-weight: 900; line-height: 1; margin-bottom: 20px; }
+        .hero .subtitle { font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #666; }
+
+        /* Stats Bar */
+        .stats { background: #f9f9f9; padding: 40px 0; border-bottom: 1px solid #eee; }
+        .stat-item h2 { font-size: 2.5rem; font-weight: 900; margin: 0; }
+        
+        /* Timeline Section */
+        .timeline-item { border-left: 2px solid var(--dark); padding-left: 30px; position: relative; margin-bottom: 40px; }
+        .timeline-item::before { 
+            content: ''; position: absolute; left: -9px; top: 0; 
+            width: 16px; height: 16px; background: var(--yellow); border-radius: 50%; 
         }
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
+        .year-label { font-weight: 900; font-size: 1.2rem; display: block; margin-bottom: 5px; }
+
+        /* General Branding */
+        .btn-black { background: var(--dark); color: white; border-radius: 0; padding: 15px 35px; font-weight: 700; }
+        .section-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 50px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">AR</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="#about">About</a>
-                <a class="nav-link" href="#projects">Projects</a>
-                <a class="nav-link" href="#contact">Contact</a>
+    <!-- Hero -->
+    <section class="hero container">
+        <div class="yellow-circle"></div>
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <p class="subtitle">Digital Learning Specialist</p>
+                <h1>ABDUL <br> REHAMAN</h1>
+                <p class="lead mb-4">"Less is More." Focused on creating elegant, automated digital experiences.</p>
+                <a href="#contact" class="btn btn-black">CONTACT ME</a>
+            </div>
+            <div class="col-md-5">
+                <!-- Replace with your photo later -->
+                <img src="https://via.placeholder.com/400x500" alt="Abdul" class="img-fluid">
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <header class="hero-section text-center">
+    <!-- Stats Bar -->
+    <section class="stats text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold">Abdul Rehaman</h1>
-            <p class="lead">Digital Learning Specialist | AI Automation Enthusiast</p>
-            <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
-        </div>
-    </header>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Projects</h2>
             <div class="row">
-                <!-- Project 1: AI Automation -->
-                <div class="col-md-6">
-                    <div class="card project-card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">AI Automation Core</h5>
-                            <p class="card-text">Developing structured output agents using Python and Gemini API.</p>
-                            <a href="#" class="btn btn-outline-dark btn-sm">View on GitHub</a>
-                        </div>
-                    </div>
+                <div class="col-md-4 stat-item"><h2>2+</h2><p>Years Experience</p></div>
+                <div class="col-md-4 stat-item"><h2>15+</h2><p>Projects Done</p></div>
+                <div class="col-md-4 stat-item"><h2>5+</h2><p>Key Stakeholders</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience -->
+    <section class="container py-5">
+        <h2 class="section-title text-center">Education & Experience</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="timeline-item">
+                    <span class="year-label">2026 - PRESENT</span>
+                    <h4>UCT - INSTRUCTIONAL DESIGN</h4>
+                    <p>Enrolled in the professional certification program focusing on pedagogical frameworks and digital learning.</p>
                 </div>
-                <!-- Project 2: Instructional Design -->
-                <div class="col-md-6">
-                    <div class="card project-card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Learning Design Portfolio</h5>
-                            <p class="card-text">Showcasing instructional frameworks and digital learning modules.</p>
-                            <a href="#" class="btn btn-outline-dark btn-sm">Case Study</a>
-                        </div>
-                    </div>
+                <div class="timeline-item">
+                    <span class="year-label">2026</span>
+                    <h4>AI AUTOMATION CORE</h4>
+                    <p>Developing structured output agents using Python, Gemini API, and Google Cloud.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="year-label">2026</span>
+                    <h4>DIGITAL LEARNING SPECIALIST</h4>
+                    <p>Working within People and Organization Development (POD) to lead Generative AI workshops.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact" class="bg-dark text-white py-4 text-center">
-        <div class="container">
-            <p>Connect with me on <a href="#" class="text-info">LinkedIn</a></p>
-            <p>&copy; 2026 Abdul Rehaman</p>
-        </div>
+    <footer class="bg-dark text-white py-5 text-center">
+        <p>&copy; 2026 Abdul Rehaman | Built with GitHub Pages</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
